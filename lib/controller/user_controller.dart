@@ -31,17 +31,14 @@ class UserController extends GetxController {
   }
 
   delete(int index) async {
-    UserModel user = users[index] ;
+    UserModel user = users[index];
     print(user.email);
     int dara = await SheetsApi.userSheet!.values.rowIndexOf(user.email);
     print(dara);
-    if(dara == -1) return ;
+    if (dara == -1) return;
 
     await SheetsApi.userSheet!.deleteRow(dara);
-    getSheetData() ;
-
-
-
+    getSheetData();
   }
 
   addData() async {
