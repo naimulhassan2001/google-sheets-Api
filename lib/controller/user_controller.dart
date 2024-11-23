@@ -11,6 +11,7 @@ class UserController extends GetxController {
   getSheetData() async {
     var data = await SheetsApi.userSheet!.values.allRows();
 
+
     data.removeAt(0);
 
     users.clear();
@@ -20,8 +21,6 @@ class UserController extends GetxController {
     }
     update();
 
-    print(data.runtimeType);
-    print(users);
   }
 
   static UserController get instance => Get.put(UserController());

@@ -40,7 +40,8 @@ class SheetsApi {
     try {
       return userSheet = await spreadsheet.addWorksheet(title);
     } catch (e) {
-      return userSheet = await spreadsheet.worksheetByTitle(title)!;
+      print(e);
+      return userSheet = spreadsheet.worksheetByTitle(title)!;
     }
   }
 }
